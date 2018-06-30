@@ -9,9 +9,8 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
-const serve = require('koa-static')
 
-const routes = require('./api/routes')
+const routes = require('./routes')
 
 // error handler
 onerror(app)
@@ -22,7 +21,6 @@ app.use(bodyparser())
   .use(logger())
   .use(routes.routes())
   .use(router.allowedMethods())
-  .use(serve('./client/dist', {}))
 
 // logger
 app.use(async (ctx, next) => {
