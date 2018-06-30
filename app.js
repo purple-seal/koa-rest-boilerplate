@@ -30,7 +30,7 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}`)
 })
 
-app.on('error', function(err, ctx) {
+app.on('error', function (err, ctx) {
   console.log(err)
   logger.error('server error', err, ctx)
 })

@@ -1,4 +1,5 @@
-async function get() {
+
+async function get () {
   return 'OK'
 }
 
